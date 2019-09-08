@@ -14,6 +14,12 @@ pour utiliser this :
 = l'obj item devrait ainsi etre récupérer et supprimer avec removeChild()
 
 
+contenu de l'item : 
+= création d'un li
+= le remplir
+= les boutons
+= le placer dans le ul
+
 
 
 idées :
