@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html fr>
+<head>
+	<title>MY To do list</title>
+	<meta charset="utf-8">
+
+	<!--boostrap-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!--favicon-->
+	<link rel="icon" type="image" href="img/favicon.jpeg" />
+
+	<!--fontawesome-->
+	<link href="fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet">
+	
+
+</head>
+<body id="body">
+
+
+	<script type="text/javascript">
+
+		//			Titre H1
+		let title0 = document.createElement('h1');
+		title0.textContent = "TO DO LIST";
+		body.appendChild(title0);
+
+
+		//			1rst section - A FAIRE
+
+				//	section
+		let section1 = document.createElement('section');
+		section1.id = "section1";
+		body.appendChild(section1);
+
+				// 	title
+		let title1 = document.createElement('h2');
+		title1.textContent = "A faire";
+		section1.appendChild(title1);
+
+				//  list items
+		let list = document.createElement('ul');
+		list.id = "list";
+		section1.appendChild(list);
+	
+				//  items sample
+		let item1Sample = document.createElement('li');
+		list.appendChild(item1Sample);
+		item1Sample.textContent = "jeter les poubelles";
+
+		let item2Sample = document.createElement('li');
+		list.appendChild(item2Sample);
+		item2Sample.textContent = "réviser ce cours";
+
+
+
+
+		//			2nd section - AJOUTER
+				// 	section
+		let section2 = document.createElement('section');
+		section2.id = "section2";
+		body.appendChild(section2);		
+
+				//	title
+		let title2 = document.createElement('h2');
+		title2.textContent = "Ajouter vos tâches";
+		section2.appendChild(title2);
+
+				//	form
+		let form = document.createElement('form');
+		section2.appendChild(form);
+
+				//	input text
+		let inputText = document.createElement('input');
+		inputText.setAttribute("name","content");
+		inputText.setAttribute("id","addItem");
+		form.appendChild(inputText);
+		
+				// 	button
+		let addButton = document.createElement('button');
+		addButton.textContent = "Ajouter une tâche";
+		form.appendChild(addButton);
+
+				
+
+
+
+
+
+				//add a new item
+
+		addButton.addEventListener("click", function(event){
+			//supp le comportement par défaut
+			event.preventDefault();
+			//on récup le ul par son id
+			list = document.getElementById("list");
+			//on crée un li
+			listItems = document.createElement('li');
+			
+			//on écrit dans li ce qu'il y a dans l'input
+			listItems.textContent = document.getElementById('addItem').value;
+
+			//on place li sous ul
+			list.appendChild(listItems);
+
+			//on ajoute closeButton
+			closeButton = document.createElement('i');
+			closeButton.className = "fas fa-times-circle fa-2x";
+			//lien du closeButton
+			aCloseButton = document.createElement('a');
+			aCloseButton.className = "delete";
+			aCloseButton.setAttribute("href", "javascript:void(0)");
+			aCloseButton.setAttribute("onclick", "deleteItem()");
+			listItems.appendChild(aCloseButton);
+			aCloseButton.appendChild(closeButton);
+
+			//on ajoute editButton
+			editButton = document.createElement('i');
+			editButton.className = "fas fa-pen-square fa-2x";
+			//lien du editButton
+			aEditButton = document.createElement('a');
+			aEditButton.className = "edit";
+			aEditButton.setAttribute("href", "javascript:void(0)");
+			aEditButton.setAttribute("onclick", "editItem()");
+			listItems.appendChild(aEditButton);
+			aEditButton.appendChild(editButton);
+
+			//on remet les compteurs à zéro : l'input est vide
+			document.getElementById('addItem').value = '';
+
+		})
+
+
+
+				//supprimer item
+		function deleteItem() {
+			//infos déjà lors du click
+			//delete le li
+
+				list = listItems.parentNode;
+				list.removeChild(listItems);
+		}
+		
+
+
+				//modifier item
+		function editItem() {
+			//prendre valeur du li
+			//la mettre dans l'input
+			//modifier
+			//renvoyer les modifs dans le li
+
+		}
+
+
+
+
+
+
+
+
+		/*closeLink = document.getElementsByClassName("delete");
+		closeLink.addEventListener("click", function(event){
+			//supp le comportement par défaut
+			event.preventDefault();
+			//récup li et ul
+			li = document.parentElement("delete");
+			ul = document.getElementById('list');
+			//faire disparaitre li
+			ul.removeChild(li);
+
+		})*/
+
+
+
+
+	
+
+
+
+	
+	</script>
+
+
+</body>
+</html>
