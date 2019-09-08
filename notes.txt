@@ -1,0 +1,23 @@
+NOTES
+
+
+pour utiliser this :
+
+🔰 faire que chaque item soit un obj
+= mettre la creation de chq item dans une variable et y ajouter la f° de creation (méthode)
+= return le resultat dans une variable
+= il faut créeer une base pr chaq item : content + boutons ; et c'est rempli d'infos ensuite à la créat°
+
+
+🔰 dans la fonction de suppression : 
+= utiliser this.item (qui est censé renvoyer le contenu de l'item et tt le li)
+= l'obj item devrait ainsi etre récupérer et supprimer avec removeChild()
+
+
+
+
+idées :
+
+🔰 mettre étapes de la création de l'item dans une fonction
+
+🔰 regrouper les créations d'éléments et les autres memes fonctions
