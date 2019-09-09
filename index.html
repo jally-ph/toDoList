@@ -72,14 +72,14 @@
 
 
 		//objet item
-		Item = {
-			li : li = document.createElement('li'),
-			content : content = document.getElementById('addItem').value,
-			deleteButton : addDeleteButton(),
-			editButton : addEditButton(),
-			list : list = document.getElementById("list"),
-			display : list.appendChild(li),
-		};
+		function Item(content) {
+			list = document.getElementById("list");
+			li = document.createElement('li');
+			list.appendChild(li);
+			li.textContent = content;
+			addDeleteButton();
+			addEditButton();
+		}
 		
 			
 
@@ -148,11 +148,9 @@
 		addButton.addEventListener("click", function(event){
 			//supp le comportement par défaut
 			event.preventDefault();
-			
-			item = new Item();
-			item.content = document.getElementById('addItem').value;
 
-			//list.appendChild(li);
+			// crée un obj Item et dans le param Content, on met value de l'input	
+			let item = new Item(document.getElementById('addItem').value);
 
 			//on remet les compteurs à zéro : l'input est vide
 			document.getElementById('addItem').value = '';
