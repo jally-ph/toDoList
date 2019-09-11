@@ -77,15 +77,14 @@
 			li = document.createElement('li');
 			list.appendChild(li);
 			li.textContent = content;
-			addDeleteButton();
+			addDeleteButton(content);
 			addEditButton();
+
+			
+			
 		}
 		
 			
-
-
-
-
 
 
 		//f° - add li with input content
@@ -102,12 +101,7 @@
 				list.appendChild(listItems);
 			}*/
 
-		
-
-
-
-
-		
+	
 		
 		
 		//f° - add a deleteButton
@@ -119,8 +113,11 @@
 			aDeleteButton = document.createElement('a');
 			aDeleteButton.className = "delete";
 			aDeleteButton.setAttribute("href", "javascript:void(0)");
-			aDeleteButton.setAttribute("onclick", "deleteItem()");
-			//li = this.Item.li;
+			 //utiliser addEventlistener
+			aDeleteButton.addEventListener("click", function(event){
+				this.parentElement.remove();
+			})
+			
 			li.appendChild(aDeleteButton);
 			aDeleteButton.appendChild(deleteButton);
 		}
@@ -135,7 +132,7 @@
 			aEditButton = document.createElement('a');
 			aEditButton.className = "edit";
 			aEditButton.setAttribute("href", "javascript:void(0)");
-			aEditButton.setAttribute("onclick", "editItem()");
+			//aEditButton.setAttribute("onclick", "editItem()");
 			li.appendChild(aEditButton);
 			aEditButton.appendChild(editButton);
 		}
@@ -154,22 +151,24 @@
 
 			//on remet les compteurs à zéro : l'input est vide
 			document.getElementById('addItem').value = '';
-
 		})
 
 
+		
 
-				/*supprimer item
-		function deleteItem() {
-			//infos déjà lors du click
-			//delete le li
-
-				list = listItems.parentNode;
-				list.removeChild(listItems);
-		}
+		//modifier item
 		
 
 
+
+
+
+		
+
+
+
+
+/*
 				//modifier item
 		function editItem() {
 			//prendre valeur du li

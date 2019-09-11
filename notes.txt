@@ -1,24 +1,17 @@
-NOTES
+N.O.T.E.S
 
 
-pour utiliser this :
+🔰 pr modification d'item :
 
-🔰 faire que chaque item soit un obj
-= mettre la creation de chq item dans une variable et y ajouter la f° de creation (méthode)
-= return le resultat dans une variable
-= il faut créeer une base pr chaq item : content + boutons ; et c'est rempli d'infos ensuite à la créat°
-
-
-🔰 dans la fonction de suppression : 
-= utiliser this.item (qui est censé renvoyer le contenu de l'item et tt le li)
-= l'obj item devrait ainsi etre récupérer et supprimer avec removeChild()
+= mettre f° dans la création de l'EditButton (ne pas créer une f° EN DEHORS)
+= récupérer la valeur de l'item (le textContent du li)
+= changer sa valeur par ce qui aura été inscrite dans l'input
+= faire que ça ne fonctionne qu'une fois, qd on appuie sur editbutton
 
 
-contenu de l'item : 
-= création d'un li
-= le remplir
-= les boutons
-= le placer dans le ul
+
+
+
 
 
 
@@ -27,3 +20,33 @@ idées :
 🔰 mettre étapes de la création de l'item dans une fonction
 
 🔰 regrouper les créations d'éléments et les autres memes fonctions
+
+
+
+
+
+
+
+
+
+
+
+
+🔴  🔴  🔴  🔴  🔴  🔴  🔴  🔴  🔴  F A I T  🔴  🔴  🔴  🔴  🔴  🔴  🔴  🔴  🔴  🔴  🔴  
+
+contenu de l'item : 
+✔️ création d'un li
+✔️ le remplir
+✔️ les boutons
+✔️ le placer dans le ul
+
+
+🔰 faire que chaque item soit un obj
+✔️ mettre la creation de chq item dans une variable et y ajouter la f° de creation (méthode)
+❌ return le resultat dans une variable
+✔️ il faut créeer une base pr chaq item : content + boutons ; et c'est rempli d'infos ensuite à la créat°
+
+
+🔰 dans la fonction de suppression : 
+❌ utiliser this.item (qui est censé renvoyer le contenu de l'item et tt le li)
+✔️ l'obj item devrait ainsi etre récupérer et supprimer avec removeChild()
