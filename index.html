@@ -26,8 +26,6 @@
 		let section1 = document.createElement('section');
 		let title1 = document.createElement('h2');
 		let list = document.createElement('ul');
-		let item1Sample = document.createElement('li'); //li d'exemple
-		let item2Sample = document.createElement('li'); //li d'exemple
 		let section2 = document.createElement('section');
 		let title2 = document.createElement('h2');
 		let form = document.createElement('form');
@@ -38,8 +36,6 @@
 		//all textContent
 		title0.textContent = "TO DO LIST";
 		title1.textContent = "A faire";
-		item1Sample.textContent = "jeter les poubelles";
-		item2Sample.textContent = "réviser ce cours";
 		title2.textContent = "Ajouter vos tâches";
 		addButton.textContent = "Ajouter une tâche";
 
@@ -60,8 +56,6 @@
 		body.appendChild(section1);
 		section1.appendChild(title1);
 		section1.appendChild(list);
-		list.appendChild(item1Sample);
-		list.appendChild(item2Sample);
 		body.appendChild(section2);
 		section2.appendChild(title2);
 		section2.appendChild(form);
@@ -78,63 +72,43 @@
 			list.appendChild(li);
 			li.textContent = content;
 			addDeleteButton(content);
-			addEditButton();
-
-			
-			
+			addEditButton();			
 		}
 		
-			
 
-
-		//f° - add li with input content
-			/*function addLiContent(){
-				//on récup le ul par son id
-				list = document.getElementById("list");
-				//on crée un li
-				listItems = document.createElement('li');
-				
-				//on écrit dans li ce qu'il y a dans l'input
-				listItems.textContent = document.getElementById('addItem').value;
-
-				//on place li sous ul
-				list.appendChild(listItems);
-			}*/
-
+		//tâches d'exemple
+		let itemSample1 = new Item("faire la vaisselle");
+		let itemSample2 = new Item("voir ce film");
 	
 		
 		
 		//f° - add a deleteButton
 		function addDeleteButton(){
-			//on ajoute deleteButton
+	
 			deleteButton = document.createElement('i');
 			deleteButton.className = "fas fa-times-circle fa-2x";
-			//lien du deleteButton
-			aDeleteButton = document.createElement('a');
-			aDeleteButton.className = "delete";
-			aDeleteButton.setAttribute("href", "javascript:void(0)");
-			 //utiliser addEventlistener
-			aDeleteButton.addEventListener("click", function(event){
+			deleteButton.addEventListener("click", function(event){
 				this.parentElement.remove();
 			})
 			
-			li.appendChild(aDeleteButton);
-			aDeleteButton.appendChild(deleteButton);
+			li.appendChild(deleteButton);
 		}
 
 
 		//f° - add a editButton
 		function addEditButton(){
-			//on ajoute editButton
+
 			editButton = document.createElement('i');
 			editButton.className = "fas fa-pen-square fa-2x";
-			//lien du editButton
-			aEditButton = document.createElement('a');
-			aEditButton.className = "edit";
-			aEditButton.setAttribute("href", "javascript:void(0)");
-			//aEditButton.setAttribute("onclick", "editItem()");
-			li.appendChild(aEditButton);
-			aEditButton.appendChild(editButton);
+			editButton.addEventListener('click', function(e){
+				let li = this.parentElement;
+				let valeur = prompt("Changer votre tâche");
+				li.textContent = valeur;
+				addDeleteButton(); 
+				addEditButton();
+			})
+
+			li.appendChild(editButton);
 		}
 		
 		
@@ -155,33 +129,6 @@
 
 
 		
-
-		//modifier item
-		
-
-
-
-
-
-		
-
-
-
-
-/*
-				//modifier item
-		function editItem() {
-			//prendre valeur du li
-			//la mettre dans l'input
-			//modifier
-			//renvoyer les modifs dans le li
-
-		}
-
-
-*/
-
-
 
 	
 	</script>
