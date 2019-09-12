@@ -94,7 +94,11 @@
 			deleteButton = document.createElement('i');
 			deleteButton.className = "fas fa-times-circle";
 			deleteButton.addEventListener("click", function(event){
-				this.parentElement.remove();
+				if ( confirm( "Voulez-vous vraiment supprimer cette tâche ?" ) ) {
+				    this.parentElement.remove();
+				} else {
+				     
+				}
 			})
 			
 			li.appendChild(deleteButton);
