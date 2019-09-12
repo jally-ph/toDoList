@@ -111,11 +111,15 @@
 			editButton = document.createElement('i');
 			editButton.className = "fas fa-pen-square";
 			editButton.addEventListener('click', function(e){
-				let li = this.parentElement;
+				
 				let valeur = prompt("Changer votre tâche");
-				li.textContent = valeur;
-				addDeleteButton(); 
-				addEditButton();
+				if (valeur != '') {
+					let li = this.parentElement;
+					li.textContent = valeur;
+					addDeleteButton(); 
+					addEditButton();
+				}
+				
 			})
 
 			li.appendChild(editButton);
